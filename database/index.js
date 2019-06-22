@@ -5,7 +5,7 @@ var connection = mysql.createConnection({
   host:'localhost',
   user: 'root',
   password: 'password',
-  database: 'comments'
+  database: 'SoSaCloud'
 });
 
 connection.connect((err) => {
@@ -16,7 +16,17 @@ connection.connect((err) => {
 })
 
 var getComment = () => {
-  connection.query('', function (error, results, fields) {
+  connection.query(`CREATE TABLE comments(
+    comment_id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    song_id INT NOT NULL,
+    timestamp DATETIME NOT NULL,
+    comment TEXT,
+    PRIMARY KEY ( comment_id ),
+    FOREIGN KEY ( user_id )
+    REFERENCES users( user_id ),
+    FOREIGN KEY ( song_id )
+    REFERENCES songs( song_id ));`, function (error, results, fields) {
     if (error) throw error;
 
   });
