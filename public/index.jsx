@@ -3,7 +3,8 @@
 
 
 let createComment = () => {
-
+  let comment = randomMessage();
+  return comment[0] + comment[1] + comment[2] + comment[3] + comment[4];
 }
 
 let randomElement = (array) => {
@@ -12,10 +13,10 @@ let randomElement = (array) => {
 };
 
 var randomMessage = function(){
-  var opening = ['Im glad', 'This makes me happy', 'wut', 'Im sad', '', '', '', 'Check out my song', 'Yo', 'YOOOOOO', 'What did I just listen to?'];
-  var verbs = ['', 'dab', 'lel',];
-  var objects = ['my', 'your', 'the', 'a', 'my', 'an entire', 'this', 'that', 'the'];
-  var nouns = ['music', 'song', 'jam', 'sandwich', 'life', 'wack'];
-  var emoji = ['', '', '', ':)', ':) :) :)', ':(', '', '', ':D', 'D:'];
-  return [randomElement(opening), randomElement(verbs), randomElement(objects), randomElement(nouns), randomElement(emoji)].join(' ');
+  var opening = ['Im glad ', 'This makes me happy ', 'wut ', 'Im sad ', '', '', '', 'Check out my song ', 'Yo ', 'YOOOOOO ', 'What did I just listen to? '];
+  var verbs = ['', 'dab ', 'lel ',];
+  var objects = ['my ', 'your ', 'the ', 'a ', 'my ', 'an entire ', 'this ', 'that ', 'the '];
+  var nouns = ['music ', 'song ', 'jam ', 'sandwich ', 'life ', 'wack '];
+  var emoji = ['', '', '', ':) ', ':) :) :) ', ':( ', '', '', ':D ', 'D: '];
+  return [randomElement(opening), randomElement(verbs), randomElement(objects), randomElement(nouns), randomElement(emoji)];
 };
