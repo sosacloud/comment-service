@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+var faker = require('faker');
 const port = 3001;
 var bodyParser = require('body-parser');
 

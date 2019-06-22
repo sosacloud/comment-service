@@ -1,4 +1,6 @@
 var mysql = require('mysql');
+var faker = require('faker');
+
 var connection = mysql.createConnection({
   host:'localhost',
   user: 'root',
@@ -14,12 +16,21 @@ connection.connect((err) => {
 })
 
 var getComment = () => {
+  connection.query('', function (error, results, fields) {
+    if (error) throw error;
 
+  });
 };
 var getAllComments = () => {
+  connection.query('', function (error, results, fields) {
+    if (error) throw error;
 
+  });
 };
 var newComment = () => {
+  connection.query('', function (error, results, fields) {
+    if (error) throw error;
 
+  });
 };
 
