@@ -3,7 +3,7 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
   host:'localhost',
   user: 'root',
-  password: 'password',
+  password: 'M@trix224',
   database: 'SoSaCloud'
 });
 
@@ -32,9 +32,23 @@ var newComment = (newEntry) => {
 
   });
 };
+var newUser = (entry) => {
+  connection.query('INSERT INTO users (user_name) VALUES (?) ON DUPLICATE KEY UPDATE user_name=user_name;', entry, function (error, results, fields) {
+    if (error) throw error;
+
+  });
+};
+var newSong = (entry) => {
+  connection.query('INSERT INTO songs (song_name) VALUES (?) ON DUPLICATE KEY UPDATE song_name=song_name;', entry, function (error, results, fields) {
+    if (error) throw error;
+
+  });
+};
 
 module.exports = {
   getComment,
   getAllComments,
-  newComment
+  newComment,
+  newUser,
+  newSong
 }
