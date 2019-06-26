@@ -20,10 +20,10 @@ var getComment = () => {
 
   });
 };
-var getAllComments = () => {
-  connection.query('', function (error, results, fields) {
+var getAllComments = (cb) => {
+  connection.query('SELECT * FROM comments ORDER BY time_stamp DESC', function (error, results, fields) {
     if (error) throw error;
-
+    cb(results);
   });
 };
 var newComment = (newEntry) => {
