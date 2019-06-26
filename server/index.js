@@ -24,9 +24,11 @@ app.get('/comments/load', (req, res) => {
 app.post('/comments/new', (req, res) => {// [comment, timestamp, username, songname]
   let userName = 'User1';
   let songName = 'Song1';
+  let comment = 'Hello again';
+  let timeStamp = '2019-06-25 08:14:54';
   db.postNewUser([userName], () => {
     db.postNewSong([songName], () => {
-      db.postNewComment(['Hello again', '2019-06-25 08:14:54', userName, songName], (newComment) => {
+      db.postNewComment([comment, timeStamp, userName, songName], (newComment) => {
         console.log(newComment);
         res.send('Hello');
       });
