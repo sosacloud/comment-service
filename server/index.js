@@ -21,5 +21,18 @@ app.get('/comments/load', (req, res) => {
   res.send('Hello')
 });
 
+app.post('/comments/new', (req, res) => {// [comment, timestamp, username, songname]
+  let userName = 'User1';
+  let songName = 'Song1';
+  db.postNewUser([userName], () => {
+    db.postNewSong([songName], () => {
+      db.postNewComment(['Hello again', '2019-06-25 08:14:54', userName, songName], (newComment) => {
+        console.log(newComment);
+        res.send('Hello');
+      });
+    });
+  });
+});
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

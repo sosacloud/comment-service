@@ -26,29 +26,29 @@ var getAllComments = (cb) => {
     cb(results);
   });
 };
-var newComment = (newEntry) => {
+var postNewComment = (newEntry, cb) => {
   connection.query('INSERT INTO comments (comment, time_stamp, user_id, song_id) VALUES (?, ?, (SELECT user_id from users WHERE user_name = ?), (SELECT song_id from songs WHERE song_name = ?))', newEntry, function (error, results, fields) {
     if (error) throw error;
-
+    cb(results);
   });
 };
-var newUser = (entry) => {
+var postNewUser = (entry, cb) => {
   connection.query('INSERT INTO users (user_name) VALUES (?) ON DUPLICATE KEY UPDATE user_name=user_name;', entry, function (error, results, fields) {
     if (error) throw error;
-
+    cb();
   });
 };
-var newSong = (entry) => {
+var postNewSong = (entry, cb) => {
   connection.query('INSERT INTO songs (song_name) VALUES (?) ON DUPLICATE KEY UPDATE song_name=song_name;', entry, function (error, results, fields) {
     if (error) throw error;
-
+    cb();
   });
 };
 
 module.exports = {
   getComment,
   getAllComments,
-  newComment,
-  newUser,
-  newSong
+  postNewComment,
+  postNewUser,
+  postNewSong
 }
