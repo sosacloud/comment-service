@@ -34,6 +34,14 @@ var postNewComment = (newEntry, cb) => {
     }
   });
 };
+var postResponseComment = (newEntry, cb) => {
+  connection.query('INSERT INTO comments (comment, time_stamp, user_id, song_id, response_id) VALUES (?, ?, (SELECT user_id from users WHERE user_name = ?), (SELECT song_id from songs WHERE song_name = ?), ?)', newEntry, function (error, results, fields) {
+    if (error) throw error;
+    if (cb) {
+      cb(results);
+    }
+  });
+};
 var postNewUser = (entry, cb) => {
   connection.query('INSERT INTO users (user_name) VALUES (?) ON DUPLICATE KEY UPDATE user_name=user_name;', entry, function (error, results, fields) {
     if (error) throw error;
