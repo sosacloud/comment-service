@@ -43,7 +43,7 @@ var postResponseComment = (newEntry, cb) => {
   });
 };
 var postNewUser = (entry, cb) => {
-  connection.query('INSERT INTO users (user_name) VALUES (?) ON DUPLICATE KEY UPDATE user_name=user_name;', entry, function (error, results, fields) {
+  connection.query('INSERT INTO users (user_name, profile_pic) VALUES (?, ?) ON DUPLICATE KEY UPDATE user_name=user_name;', entry, function (error, results, fields) {
     if (error) throw error;
     if (cb) {
       cb();
