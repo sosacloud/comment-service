@@ -30,7 +30,7 @@ app.post('/comments/new', (req, res) => {// [comment, timestamp, username, songn
     db.postNewSong([songName], () => {
       db.postNewComment([comment, timeStamp, userName, songName], (newComment) => {
         console.log(newComment);
-        res.send('Hello');
+        res.send(newComment);
       });
     });
   });
