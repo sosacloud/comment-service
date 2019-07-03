@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <div>{{ count }}</div>
+    <div>{{ countMessage }}</div>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   name: 'commentCount',
   props: {
-    count: String
+    countMessage: String
   }
 }
 </script>

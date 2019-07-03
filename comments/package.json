@@ -22,11 +22,13 @@
   "homepage": "https://github.com/sosacloud/comment-service#readme",
   "dependencies": {
     "core-js": "^2.6.5",
-    "vue": "^2.6.10",
     "express": "^4.17.1",
     "faker": "^4.1.0",
+    "jquery": "^3.4.1",
     "moment": "^2.24.0",
-    "mysql": "^2.17.1"
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",

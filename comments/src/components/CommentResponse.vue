@@ -1,16 +1,14 @@
 <template>
   <div class="hello">
-    <div v-for="comment in commentList">
-      <Comment comment="comment"/>
-    </div>
+    <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'commentCount',
+  name: 'commentResponse',
   props: {
-    commentList: Array
+    msg: String
   }
 }
 </script>
