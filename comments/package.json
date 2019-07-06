@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "test",
+    "webpack-build": "webpack -d --watch",
     "db": "mysql -u root -p < schema.sql",
     "seed": "node ./database/seeding"
   },
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/sosacloud/comment-service#readme",
   "dependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "babel-loader": "^8.0.6",
     "core-js": "^2.6.5",
     "express": "^4.17.1",
     "express-vue": "^5.9.0",
@@ -38,9 +42,13 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-vue": "^2.0.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
   },
   "eslintConfig": {
     "root": true,
