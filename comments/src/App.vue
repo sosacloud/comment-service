@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <CommentCount countMessage="# comments" />
-    <Comments commentList={{2+2}} />
+    <Comments commentList="TEST" />
   </div>
 </template>
 
