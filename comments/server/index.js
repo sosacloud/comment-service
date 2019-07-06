@@ -1,10 +1,13 @@
 const express = require('express');
+const expressVue = require('express-vue');
 const app = express();
 const path = require('path');
 var faker = require('faker');
-const port = 3001;
+const port = 3009;
 var bodyParser = require('body-parser');
 const db = require('../database/index.js');
+
+expressVue.use(app);
 
 app.use(express.static(path.join(__dirname, '../public/')));
 app.use(bodyParser.urlencoded({extended: false}));
