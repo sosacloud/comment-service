@@ -21,7 +21,7 @@ var getComment = () => {
   });
 };
 var getAllComments = (cb) => {
-  connection.query('SELECT * FROM comments ORDER BY time_stamp DESC', function (error, results, fields) {
+  connection.query('SELECT * FROM comments INNER JOIN users ON comments.user_id=users.user_id ORDER BY time_stamp DESC', function (error, results, fields) {
     if (error) throw error;
     cb(results);
   });
