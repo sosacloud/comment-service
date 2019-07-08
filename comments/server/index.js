@@ -2,7 +2,6 @@ const express = require('express');
 const expressVue = require('express-vue');
 const app = express();
 const path = require('path');
-var faker = require('faker');
 const port = 3001;
 var bodyParser = require('body-parser');
 const db = require('../database/index.js');
