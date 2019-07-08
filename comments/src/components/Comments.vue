@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div v-for="comment in commentList">
-      <Comment comment="comment"/>
+      <div>{{ comment.comment }}</div>
     </div>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <CommentCount countMessage="# comments" />
-    <Comments commentList="TEST" />
+    <Comments v-bind:commentList="comments" />
   </div>
 </template>
 
