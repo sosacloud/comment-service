@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'commentCount',
+  name: 'Comments',
   props: {
     commentList: Array
   }

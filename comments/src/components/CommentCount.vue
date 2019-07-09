@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'commentCount',
+  name: 'CommentCount',
   props: {
     countMessage: String
   }
