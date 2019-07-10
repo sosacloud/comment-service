@@ -1,17 +1,22 @@
 <template>
-  <div class="hello">
-    <div v-for="comment in commentList">
-      <div>{{ comment.comment }}</div>
+  <div class="comments">
+    <div v-bind:key="comment.comment_id" v-for="comment in commentList">
+      <comment v-bind:comment="comment"/>
     </div>
   </div>
 </template>
 
 <script>
+import Comment from '../components/Comment.vue'
+
 export default {
   name: 'Comments',
+  components: {
+    Comment
+  },
   props: {
     commentList: Array
-  }
+  },
 }
 </script>
 
