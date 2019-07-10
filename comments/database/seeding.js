@@ -13,11 +13,11 @@ let randomElement = (array) => {
 };
 
 var randomMessage = function(){
-  var opening = ['Im glad ', 'This makes me happy ', 'wut ', 'Im sad ', '', '', '', 'Check out my song ', 'Yo ', 'YOOOOOO ', 'What did I just listen to? '];
+  var opening = ['Im glad ', 'This makes me happy ', 'wut ', 'Im sad ', '', '', '', 'Check out my song ', 'Yo ', 'YOOOOOO ', 'What did I just listen to? ', "Hi im a 15 year old rapper. Please check out my song named: "];
   var verbs = ['', 'dab ', 'lel ',];
   var objects = ['my ', 'your ', 'the ', 'a ', 'my ', 'an entire ', 'this ', 'that ', 'the '];
   var nouns = ['music ', 'song ', 'jam ', 'sandwich ', 'life ', 'wack '];
-  var emoji = ['', '', '', ':) ', ':) :) :) ', ':( ', '', '', ':D ', 'D: '];
+  var emoji = ['', '', '', ':) ', ':) :) :) ', ':( ', '', '', ':D ', 'D: ', 'H'];
   return [randomElement(opening), randomElement(verbs), randomElement(objects), randomElement(nouns), randomElement(emoji)];
 };
 
@@ -25,7 +25,7 @@ var randomMessage = function(){
 
 let userName;
 let profilePic;
-let songName = 'This Song'
+let songName = 'This Song';
 
 for (let i = 0; i < 100; i++) { // [comment, timestamp, username, songname]
   userName = faker.internet.userName(); // random userName

@@ -28,7 +28,7 @@ const db = require('../database/index.js');
 //   }
 // };
 
-expressVue.use(app);
+// expressVue.use(app);
 
 ///////////////////////////////////
 
@@ -49,13 +49,14 @@ app.get('/comments/load', (req, res) => {
 });
 
 app.post('/comments/new', (req, res) => {// [comment, timestamp, username, songname]
-  let userName = 'User1';
+  let userName = req.body.user_name;
   let songName = 'Song1';
-  let comment = 'Hello again';
-  let timeStamp = '2019-06-25 08:14:54';
+  let comment = req.body.comment;
+  let timeStamp = req.body.time_stamp;
+  let responseId = 0;
   db.postNewUser([userName, ''], () => {
     db.postNewSong([songName], () => {
-      db.postNewComment([comment, timeStamp, userName, songName], (newComment) => {
+      db.postNewComment([comment, timeStamp, userName, songName, responseId], (newComment) => {
         console.log(newComment);
         res.send(newComment);
       });

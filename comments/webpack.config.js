@@ -6,14 +6,17 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
+        exclude: /node_modules/,
         loader: 'vue-loader'
       },
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         loader: 'babel-loader'
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [
           'vue-style-loader',
           'css-loader'
@@ -28,5 +31,12 @@ module.exports = {
    output: {
     filename: 'bundle.js',
     path: __dirname + '/public'
+  },
+  resolve: {
+    // extensions: [ '.js', '.vue' ],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+      // '@': helpers.root('src')
+    }
   }
 };

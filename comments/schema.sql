@@ -13,6 +13,7 @@ CREATE TABLE users(
 CREATE TABLE songs(
   song_id INT NOT NULL AUTO_INCREMENT,
   song_name VARCHAR(255) UNIQUE NOT NULL,
+  song_length INT NOT NULL,
   PRIMARY KEY (song_id)
 );
 
@@ -21,6 +22,7 @@ CREATE TABLE comments(
   user_id INT,
   song_id INT,
   time_stamp DATETIME NOT NULL,
+  song_time INT,
   response_id INT DEFAULT 0,
   comment TEXT NOT NULL, PRIMARY KEY ( comment_id ),
   FOREIGN KEY ( user_id )
