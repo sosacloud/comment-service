@@ -1,7 +1,7 @@
 <template>
-  <div class="submit">
+  <div class="reply">
     <form @submit="submitComment">
-      <input type="text" v-model="comment" name="comment" placeholder="Write a comment" >
+      <input type="text" v-model="comment" name="reply" placeholder="Write a reply" >
     </form>
   </div>
 </template>
@@ -15,6 +15,9 @@ export default {
   data() {
     return {comment: ''}
   },
+  props: {
+    parentComment: Object
+  },
   methods: {
     submitComment() {
       const newComment= {
@@ -25,9 +28,10 @@ export default {
         response_id: 0,
         comment: this.comment,
         user_name: faker.internet.userName(),
-        profile_pic: faker.image.avatar()
+        profile_pic: faker.image.avatar(),
+        response_id: props.parentComment.comment_id//pass prop with
       }
-      this.$emit('submit-comment', newComment);
+      this.$emit('submit-reply', newComment);
     }
   }
 }
