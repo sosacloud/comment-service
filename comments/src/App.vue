@@ -3,7 +3,7 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <CommentSubmit v-on:submit-comment="addComment" />
     <CommentCount countMessage="# comments" />
-    <Comments v-bind:commentList="comments" />
+    <Comments v-bind:commentList="comments" v-bind:addComment="addComment"/>
   </div>
 </template>
 
@@ -12,15 +12,15 @@ import $ from 'jquery';
 import CommentCount from './components/CommentCount.vue'
 import Comments from './components/Comments.vue'
 import CommentSubmit from './components/CommentSubmit.vue'
-import CommentResponse from './components/CommentResponse.vue'
+import CommentReply from './components/CommentReply.vue'
 
 export default {
-  // name: 'app',
+  name: 'app',
   components: {
     CommentCount,
     Comments,
     CommentSubmit,
-    CommentResponse
+    CommentReply
   },
   data() {
     return {
@@ -29,7 +29,6 @@ export default {
   },
   methods: {
     addComment(newComment) {
-
     $.ajax({
       type: "POST",
       url: 'comments/new',
@@ -39,7 +38,7 @@ export default {
       }
     });
       // this.comments = [newComment, ...this.comments];
-    }
+    },
   },
   created() {
     $.get( "comments/init", ( commentList ) => {
