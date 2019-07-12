@@ -3,11 +3,7 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
   host:'localhost',
   user: 'root',
-<<<<<<< HEAD
   password: 'pass',
-=======
-  password: 'M@trix224',
->>>>>>> 5bc051047e898d53a855e681ca024b9dada9e4e6
   database: 'SoSaCloud'
 });
 
