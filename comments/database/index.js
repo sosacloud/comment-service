@@ -3,7 +3,11 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
   host:'localhost',
   user: 'root',
+<<<<<<< HEAD
   password: 'pass',
+=======
+  password: 'M@trix224',
+>>>>>>> 5bc051047e898d53a855e681ca024b9dada9e4e6
   database: 'SoSaCloud'
 });
 
@@ -27,7 +31,7 @@ var getAllComments = (cb) => {
   });
 };
 var postNewComment = (newEntry, cb) => {
-  connection.query('INSERT INTO comments (comment, time_stamp, user_id, song_id, response_id) VALUES (?, ?, (SELECT user_id from users WHERE user_name = ?), (SELECT song_id from songs WHERE song_name = ?), ?)', newEntry, function (error, results, fields) {
+  connection.query('INSERT INTO comments (comment, time_stamp, song_time, user_id, song_id, response_id) VALUES (?, ?, ?, (SELECT user_id from users WHERE user_name = ?), (SELECT song_id from songs WHERE song_name = ?), ?)', newEntry, function (error, results, fields) {
     if (error) throw error;
     if (cb) {
       cb(results);

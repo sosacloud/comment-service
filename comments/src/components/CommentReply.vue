@@ -29,7 +29,7 @@ export default {
         comment: this.comment,
         user_name: faker.internet.userName(),
         profile_pic: faker.image.avatar(),
-        response_id: props.parentComment.comment_id//pass prop with
+        response_id: this.parentComment.comment_id//pass prop with
       }
       this.$emit('submit-reply', newComment);
     }
