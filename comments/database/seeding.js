@@ -30,7 +30,8 @@ let songName = 'This Song';
 for (let i = 0; i < 100; i++) { // [comment, timestamp, username, songname]
   userName = faker.internet.userName(); // random userName
   profilePic = faker.image.avatar();
+  songTime = Math.floor(Math.random() * 180);
   mysql.postNewUser([userName, profilePic]);
   mysql.postNewSong([songName]);
-  mysql.postNewComment([createComment(), moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), userName, songName]);
+  mysql.postNewComment([createComment(), moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), songTime,  userName, songName, 0]);
 }
