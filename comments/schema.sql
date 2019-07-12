@@ -13,7 +13,7 @@ CREATE TABLE users(
 CREATE TABLE songs(
   song_id INT NOT NULL AUTO_INCREMENT,
   song_name VARCHAR(255) UNIQUE NOT NULL,
-  song_length INT NOT NULL,
+  song_length INT DEFAULT 0,
   PRIMARY KEY (song_id)
 );
 
