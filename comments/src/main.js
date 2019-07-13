@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import App from './App.vue'
+import commentService from './comment-service.vue'
 
 Vue.config.productionTip = false
 
 new Vue({
-  el: '#app',
-  render: h => h(App),
+  el: '#comment-service',
+  render: h => h(commentService),
 })
 //.$mount('#app')

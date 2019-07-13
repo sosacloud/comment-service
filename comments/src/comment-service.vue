@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="comment-service">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <CommentSubmit v-on:submit-comment="addComment" />
     <CommentCount countMessage="# comments" />
@@ -15,7 +15,7 @@ import CommentSubmit from './components/CommentSubmit.vue'
 import CommentReply from './components/CommentReply.vue'
 
 export default {
-  name: 'app',
+  name: 'comment-service',
   components: {
     CommentCount,
     Comments,
