@@ -54,9 +54,10 @@ app.post('/comments/new', (req, res) => {// [comment, timestamp, username, songn
   let comment = req.body.comment;
   let timeStamp = req.body.time_stamp;
   let responseId = req.body.responseId ? req.body.responseId: 0;
+  let songTime = Math.floor(Math.random() * 180);
   db.postNewUser([userName, ''], () => {
     db.postNewSong([songName], () => {
-      db.postNewComment([comment, timeStamp, userName, songName, responseId], (newComment) => {
+      db.postNewComment([comment, timeStamp, songTime, userName, songName, responseId], (newComment) => {
         console.log(newComment);
         res.send(newComment);
       });
