@@ -11,7 +11,7 @@
     "webpack-build": "webpack -d --watch",
     "db": "mysql -u root -p < schema.sql",
     "seed": "node ./database/seeding",
-    "dev": "concurrently \"npm run db\" \"npm run seed\" \"npm run webpack-build\" \"npm run serve\"",
+    "dev": "concurrently \"npm run db\" \"npm run seed\" \"npm run webpack-build\" \"npm run serve\""
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "@babel/core": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "babel-loader": "^8.0.6",
+    "concurrently": "^4.1.1",
     "core-js": "^2.6.5",
     "express": "^4.17.1",
     "express-vue": "^5.9.0",
