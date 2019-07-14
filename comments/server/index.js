@@ -6,31 +6,7 @@ const port = 3001;
 var bodyParser = require('body-parser');
 const db = require('../database/index.js');
 
-/////////////////////////////////
-// const vueOptions = {
-//   rootPath: path.join(__dirname, '../example/views'),
-//   head: {
-//       title: 'Hello this is a global title',
-//       scripts: [
-//           { src: 'https://example.com/script.js' },
-//       ],
-//       styles: [
-//           { style: '/assets/rendered/style.css' }
-//       ]
-//   },
-//   data: {
-//       foo: true,
-//       bar: 'yes',
-//       qux: {
-//           id: 123,
-//           baz: 'anything you wish, you can have any kind of object in the data object, it will be global and on every route'
-//       }
-//   }
-// };
-
-// expressVue.use(app);
-
-///////////////////////////////////
+expressVue.use(app);
 
 app.use(express.static(path.join(__dirname, '../public/')));
 app.use(bodyParser.urlencoded({extended: false}));
