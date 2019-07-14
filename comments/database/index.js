@@ -1,10 +1,10 @@
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  host:'localhost',
+  host: 'localhost',
   user: 'root',
-  password: 'pass',
-  database: 'SoSaCloud'
+  password: 's1c4o8t7t',
+  database: 'comments'
 });
 
 connection.connect((err) => {
