@@ -47,7 +47,7 @@ export default {
       this.comments = commentList;
     })
 
-    $.get( "comments/count", {songName: 'This Song'}) // UPDATE THIS TO GET DIFFERENT SONGS
+    $.get( "comments/count", {songName: 'This Song'}) // UPDATE SONG NAME HERE
     .done(( commentCount ) => {
       console.log('COMMENT COUNT', commentCount);
       this.commentCount = commentCount['count(*)'];

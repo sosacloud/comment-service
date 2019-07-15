@@ -2,6 +2,7 @@
   <div class="comment" v-bind:class="{'is_reply':comment.response_id}">
     <div @mouseover="hover = true" @mouseleave="hover = false">
       {{ comment.comment }}
+      {{ comment.response_id }}
       <input
         type="button"
         v-show="hover"
@@ -42,4 +43,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+div.is_reply {
+  position: absolute;
+  left: 100px;
+}
 </style>
