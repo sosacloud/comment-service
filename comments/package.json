@@ -24,11 +24,11 @@
   },
   "homepage": "https://github.com/sosacloud/comment-service#readme",
   "dependencies": {
-    "@babel/core": "^7.5.0",
-    "@babel/preset-env": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
     "babel-loader": "^8.0.6",
     "concurrently": "^4.1.1",
-    "core-js": "^2.6.5",
+    "core-js": "^3.1.4",
     "express": "^4.17.1",
     "express-vue": "^5.9.0",
     "faker": "^4.1.0",
@@ -39,19 +39,19 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
+    "@vue/cli-plugin-babel": "^3.9.2",
+    "@vue/cli-plugin-eslint": "^3.9.2",
+    "@vue/cli-service": "^3.9.2",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.0.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-vue": "^2.0.2",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
+    "eslint": "^6.0.1",
+    "eslint-plugin-vue": "^5.2.3",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5"
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6"
   },
   "eslintConfig": {
     "root": true,
