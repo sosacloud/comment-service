@@ -31,7 +31,7 @@ app.get('/comments/count', (req, res) => {
 
 app.post('/comments/new', (req, res) => {
   let userName = req.body.user_name;
-  let songName = 'Song1';
+  let songName = 'This Song';
   let comment = req.body.comment;
   let timeStamp = req.body.time_stamp;
   let responseId = req.body.responseId ? req.body.responseId: 0;
