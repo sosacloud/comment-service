@@ -36,10 +36,6 @@ export default {
     commentClick() {
       this.clicked = true;
     }
-    // mouseOverReply() {
-    //   this.reply = !this.reply
-    //   console.log('MOUSEOVERREPLY', this.reply);
-    // }
   }
 }
 </script>

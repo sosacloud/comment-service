@@ -20,11 +20,16 @@ app.get('/comments/init', (req, res) => {
   })
 });
 
-app.get('/comments/load', (req, res) => {
-  res.send('Hello')
+app.get('/comments/count', (req, res) => {
+  let songName = [req.query.songName];
+  console.log('SONGNAME',songName[0]);
+  db.getCommentCount(songName, (commentCount) => {
+    console.log('COMMENTCOUNT', commentCount[0]['count(*)']);
+    res.send(commentCount[0]);
+  })
 });
 
-app.post('/comments/new', (req, res) => {// [comment, timestamp, username, songname]
+app.post('/comments/new', (req, res) => {
   let userName = req.body.user_name;
   let songName = 'Song1';
   let comment = req.body.comment;
@@ -34,7 +39,7 @@ app.post('/comments/new', (req, res) => {// [comment, timestamp, username, songn
   db.postNewUser([userName, ''], () => {
     db.postNewSong([songName], () => {
       db.postNewComment([comment, timeStamp, songTime, userName, songName, responseId], (newComment) => {
-        console.log(newComment);
+        console.log('NEW COMMENT:', newComment);
         res.send(newComment);
       });
     });

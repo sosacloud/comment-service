@@ -2,7 +2,7 @@
   <div id="comment-service">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <CommentSubmit v-on:submit-comment="addComment" />
-    <CommentCount countMessage="# comments" />
+    <CommentCount v-bind:commentCount="commentCount" countMessage="comments" />
     <Comments v-bind:commentList="comments" v-bind:addComment="addComment"/>
   </div>
 </template>
@@ -24,7 +24,8 @@ export default {
   },
   data() {
     return {
-      comments: []
+      comments: [],
+      commentCount: 0
     }
   },
   methods: {
@@ -44,6 +45,12 @@ export default {
     $.get( "comments/init", ( commentList ) => {
       console.log('ALL COMMENTS', commentList);
       this.comments = commentList;
+    })
+
+    $.get( "comments/count", {songName: 'This Song'}) // UPDATE THIS TO GET DIFFERENT SONGS
+    .done(( commentCount ) => {
+      console.log('COMMENT COUNT', commentCount);
+      this.commentCount = commentCount['count(*)'];
     });
   }
 }

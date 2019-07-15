@@ -26,6 +26,14 @@ var getAllComments = (cb) => {
     cb(results);
   });
 };
+var getCommentCount = (songName, cb) => {
+  connection.query('SELECT count(*) from comments INNER JOIN songs ON comments.song_id=songs.song_id where song_name=?', songName, function (error, results, fields) {
+    if (error) throw error;
+    if (cb) {
+      cb(results);
+    }
+  });
+};
 var postNewComment = (newEntry, cb) => {
   connection.query('INSERT INTO comments (comment, time_stamp, song_time, user_id, song_id, response_id) VALUES (?, ?, ?, (SELECT user_id from users WHERE user_name = ?), (SELECT song_id from songs WHERE song_name = ?), ?)', newEntry, function (error, results, fields) {
     if (error) throw error;
@@ -54,6 +62,7 @@ var postNewSong = (entry, cb) => {
 module.exports = {
   getComment,
   getAllComments,
+  getCommentCount,
   postNewComment,
   postNewUser,
   postNewSong
