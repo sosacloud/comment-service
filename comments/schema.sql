@@ -24,6 +24,7 @@ CREATE TABLE comments(
   time_stamp DATETIME NOT NULL,
   song_time INT,
   response_id INT DEFAULT 0,
+  is_parent INT DEFAULT 1,
   comment TEXT NOT NULL, PRIMARY KEY ( comment_id ),
   FOREIGN KEY ( user_id )
     REFERENCES users ( user_id ),

@@ -1,5 +1,5 @@
 <template>
-  <div class="comment" v-bind:class="{'is_reply':comment.response_id}">
+  <div class="comment" v-bind:class="{'is_reply':comment.response_id!==comment.comment_id}">
     <div @mouseover="hover = true" @mouseleave="hover = false">
       {{ comment.user_name}} at {{ comment.song_time}}
       <br>

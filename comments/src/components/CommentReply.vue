@@ -21,7 +21,7 @@ export default {
   methods: {
     submitComment() {
       const newComment= {
-        comment_id: this.parentComment.comment_id,
+        comment_id: 1, //need to pass a prop with current comment ID num
         // user_id: 1,
         song_id: 1, //will be this.songID or something
         time_stamp: moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'),
