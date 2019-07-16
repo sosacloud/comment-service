@@ -15,6 +15,9 @@ export default {
   data() {
     return {comment: ''}
   },
+  props: {
+    latestCommentId: Number
+  },
   methods: {
     submitComment() {
       const newComment= {
@@ -25,8 +28,10 @@ export default {
         response_id: 0,
         comment: this.comment,
         user_name: faker.internet.userName(),
-        profile_pic: faker.image.avatar()
+        profile_pic: faker.image.avatar(),
+        response_id: this.latestCommentId
       }
+      // console.log("LASTEST COMM ID IN SUBMIT", this.atestCommentId);
       this.$emit('submit-comment', newComment);
     }
   }

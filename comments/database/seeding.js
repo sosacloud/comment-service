@@ -26,12 +26,12 @@ var randomMessage = function(){
 let userName;
 let profilePic;
 let songName = 'This Song';
-
+let responseId = 1;
 for (let i = 0; i < 100; i++) { // [comment, timestamp, username, songname]
   userName = faker.internet.userName(); // random userName
   profilePic = faker.image.avatar();
   songTime = Math.floor(Math.random() * 180);
   mysql.postNewUser([userName, profilePic]);
   mysql.postNewSong([songName]);
-  mysql.postNewComment([createComment(), moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), songTime,  userName, songName, 0]);
+  mysql.postNewComment([createComment(), moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), songTime,  userName, songName, responseId++]);
 }

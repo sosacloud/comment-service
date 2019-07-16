@@ -21,13 +21,13 @@ var getComment = () => {
   });
 };
 var getAllComments = (cb) => {
-  connection.query('SELECT * FROM comments INNER JOIN users ON comments.user_id=users.user_id ORDER BY time_stamp DESC', function (error, results, fields) {
+  connection.query('SELECT * FROM comments INNER JOIN users ON comments.user_id=users.user_id ORDER BY response_id DESC, time_stamp DESC', function (error, results, fields) {
     if (error) throw error;
     cb(results);
   });
 };
 var getCommentCount = (songName, cb) => {
-  connection.query('SELECT count(*) from comments INNER JOIN songs ON comments.song_id=songs.song_id where song_name=?', songName, function (error, results, fields) {
+  connection.query('SELECT count(*) from comments INNER JOIN songs ON comments.song_id=songs.song_id where song_name=?;', songName, function (error, results, fields) {
     if (error) throw error;
     if (cb) {
       cb(results);

@@ -21,11 +21,10 @@ export default {
   methods: {
     submitComment() {
       const newComment= {
-        comment_id: 1, //need to pass a prop with current comment ID num
+        comment_id: this.parentComment.comment_id,
         // user_id: 1,
         song_id: 1, //will be this.songID or something
         time_stamp: moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'),
-        response_id: 0,
         comment: this.comment,
         user_name: faker.internet.userName(),
         profile_pic: faker.image.avatar(),
