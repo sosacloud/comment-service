@@ -56,6 +56,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: #949494;
-  margin-top: 60px;
+  margin-top: 20px;
+  margin-left: 119px;
+  display: inline-block;
 }
 </style>
