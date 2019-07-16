@@ -1,9 +1,9 @@
 <template>
   <div class="comment" v-bind:class="{'is_reply':comment.response_id!==comment.comment_id}">
     <div @mouseover="hover = true" @mouseleave="hover = false">
-      {{ comment.user_name}} at {{ comment.song_time}}
+      <img class="profile" :src="comment.profile_pic" /> {{ comment.user_name}} at {{ comment.song_time}} # days ago
       <br>
-      {{ comment.comment }} - {{comment.response_id}} - {{comment.comment_id}}
+      {{ comment.comment }}
       <input
         type="button"
         v-show="hover"
@@ -45,6 +45,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 div.is_reply {
+  position: relative;
+  left: 15px;
+}
+img.profile {
   position: relative;
   left: 15px;
 }
