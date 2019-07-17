@@ -50,13 +50,13 @@ export default {
     getComments() {
     $.get( "comments/init", {start: this.page})
     .then(( commentList ) => {
-      console.log('ALL COMMENTS', commentList);
+      // console.log('ALL COMMENTS', commentList);
       this.comments = [...this.comments, ...commentList];
       //Stop Scroll Loader
-      console.log("LOAD MORE", this.loadMore);
+      // console.log("LOAD MORE", this.loadMore);
       commentList.length < 10 && (this.loadMore = false)
     }). done( () => {
-      console.log('LATEST ID', this.comments[0].comment_id)
+      // console.log('LATEST ID', this.comments[0].comment_id)
       this.latestCommentId = this.comments[0].comment_id;
       this.page++;
     })
