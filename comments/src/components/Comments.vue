@@ -1,7 +1,8 @@
 <template>
   <div class="comments">
     <div v-bind:key="comment.comment_id" v-for="comment in commentList">
-      <comment v-bind:comment="comment" v-bind:addComment="addComment"/>
+      <comment class="comment" v-bind:comment="comment" v-bind:addComment="addComment"/>
+      <br>
     </div>
   </div>
 </template>

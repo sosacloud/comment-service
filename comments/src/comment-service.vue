@@ -6,6 +6,7 @@
     <Comments v-bind:commentList="comments" v-bind:addComment="addComment"/>
     
     <scroll-loader :loader-method="getComments" :loader-enable="loadMore">
+      <!-- <img class="loading" src="./assets/giphy.gif" /> -->
       <div>Loading...</div>
     </scroll-loader>
   </div>
@@ -67,7 +68,7 @@ export default {
 
     $.get( "comments/count", {songName: 'This Song'}) // UPDATE SONG NAME HERE
     .done(( commentCount ) => {
-      console.log('COMMENT COUNT', commentCount);
+      // console.log('COMMENT COUNT', commentCount);
       this.commentCount = commentCount['count(*)'];
     });
 
@@ -77,7 +78,7 @@ export default {
 
 <style>
 #comment-service {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
