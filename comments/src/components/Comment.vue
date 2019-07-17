@@ -6,6 +6,7 @@
         <br>
         {{ comment.comment }}
       </div>
+      <div class="meta">
       <div class="time-stamp" :datetime="comment.time_stamp"># days ago</div>
       <input
         type="button"
@@ -15,6 +16,7 @@
         v-on:click="commentClick"
         value="< Reply"
       >
+      </div>
       <br>
       <br>
       <!-- Need to link reply icon image to CSS -->
@@ -54,15 +56,30 @@ export default {
 div.is_reply {
   position: relative;
   margin-left: 15px;
-  /* width: 385px; */
+  /* width: 200px; */
+  /* margin: 15px; */
+}
+div.meta {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 input.reply-button {
-  position: fixed;
-  left: 520px;
+  position: absolute;
+  /* left: 360px; */
   margin-top: 20px;
   /* background-size: 16px 16px;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9I…cgMyAxMC44MDUgM3oiIGZpbGw9IiM5OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==); */
 }
+/* input.reply-button div.is_reply {
+  position: absolute;
+  left: 335px;
+  margin-top: 20px;
+  background-size: 16px 16px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9I…cgMyAxMC44MDUgM3oiIGZpbGw9IiM5OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
+} */
 img.profile {
   position: absolute;
   float: left;
@@ -84,8 +101,8 @@ div.comment-contents {
 }
 div.time-stamp {
   /* float: left; */
-  position: fixed;
-  left: 500px
+  position: relative;
+  text-align: right;
   /* color: #999; */
   /* margin-left: 10px; */
   /* font-size: 11px; */

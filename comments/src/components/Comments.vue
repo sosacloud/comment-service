@@ -1,7 +1,7 @@
 <template>
   <div class="comments">
-    <div v-bind:key="comment.comment_id" v-for="comment in commentList">
-      <comment class="comment" v-bind:comment="comment" v-bind:addComment="addComment"/>
+    <div class="comment-div" v-bind:key="comment.comment_id" v-for="comment in commentList">
+      <comment v-bind:comment="comment" v-bind:addComment="addComment"/>
       <br>
     </div>
   </div>
@@ -24,8 +24,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-comment.comment {
-  display: table;
-  position: absolute;
+div.comment-div {
+  width: 400px;
 }
 </style>
