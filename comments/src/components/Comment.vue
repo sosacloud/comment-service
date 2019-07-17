@@ -15,7 +15,7 @@
         v-on:click="commentClick"
         value="< Reply"
       >
-      <!-- <br> -->
+      <br>
       <!-- Need to link reply icon image to CSS -->
     </div>
     <CommentReply v-bind:parentComment="comment" v-on:submit-reply="addComment" v-show="clicked"/>
@@ -51,7 +51,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 div.is_reply {
-  /* position: relative; */
+  position: relative;
   margin-left: 15px;
   width: 385px;
 }
@@ -74,6 +74,7 @@ div.comment-contents {
   left: 60px;
   color: #333;
   margin-right: 10px;
+  flex-direction: column;
   width: 400px;
 }
 div.time-stamp {
