@@ -1,7 +1,7 @@
 <template>
   <div class="reply">
     <form @submit="submitComment">
-      <input type="text" v-model="comment" name="reply" placeholder="Write a reply" >
+      <input class="reply" type="text" v-model="comment" name="reply" placeholder="Write a reply" >
     </form>
   </div>
 </template>
@@ -38,4 +38,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+div.reply {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 20px;
+  position: relative;
+  padding: 10px 10px 10px 0;
+  display: block;
+  transition: opacity 300ms,height 300ms,margin 300ms;
+  padding: 5px;
+  background: #f2f2f2;
+  border: 1px solid #e5e5e5;
+  width: 385px;
+}
+input.reply {
+  width: 375px;
+}
 </style>
