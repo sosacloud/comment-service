@@ -32,6 +32,8 @@ CREATE TABLE comments(
     REFERENCES songs ( song_id )
 );
 
+-- set global local_infile=true;
+
 /*  To execute, run:
  *    mysql -u <USER> -p < schema.sql
  *  in the terminal. */

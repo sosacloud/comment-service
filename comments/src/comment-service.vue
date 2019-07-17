@@ -4,6 +4,10 @@
     <CommentSubmit v-on:submit-comment="addComment" v-bind:latestCommentId="latestCommentId"/>
     <CommentCount v-bind:commentCount="commentCount" countMessage="comments" />
     <Comments v-bind:commentList="comments" v-bind:addComment="addComment"/>
+    
+    <scroll-loader :loader-method="getComments" :loader-enable="loadMore">
+      <div>Loading...</div>
+    </scroll-loader>
   </div>
 </template>
 
@@ -26,7 +30,9 @@ export default {
     return {
       comments: [],
       commentCount: 0,
-      latestCommentId: 0
+      latestCommentId: 0,
+      page: 0,
+      loadMore: true
     }
   },
   methods: {
@@ -41,15 +47,23 @@ export default {
     });
       // this.comments = [newComment, ...this.comments];
     },
+    getComments() {
+    $.get( "comments/init", {start: this.page})
+    .then(( commentList ) => {
+      console.log('ALL COMMENTS', commentList);
+      this.comments = [...this.comments, ...commentList];
+      //Stop Scroll Loader
+      console.log("LOAD MORE", this.loadMore);
+      commentList.length < 10 && (this.loadMore = false)
+    }). done( () => {
+      console.log('LATEST ID', this.comments[0].comment_id)
+      this.latestCommentId = this.comments[0].comment_id;
+      this.page++;
+    })
+    }
   },
   created() {
-    $.get( "comments/init", ( commentList ) => {
-      console.log('ALL COMMENTS', commentList);
-      this.comments = commentList;
-    }).done(() => {
-      this.latestCommentId = this.comments[0].comment_id;
-      console.log('LATEST ID', this.latestCommentId)
-    });
+    this.getComments();
 
     $.get( "comments/count", {songName: 'This Song'}) // UPDATE SONG NAME HERE
     .done(( commentCount ) => {

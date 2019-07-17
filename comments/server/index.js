@@ -13,10 +13,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/comments/init', (req, res) => {
   //first 10 comments
-  let start = 0;
+  let start = Number(req.query.start);
+  // console.log("REQ QUERY", req.query);
   db.getAllComments((allComments) => {
-    let returningComments = allComments.slice(start, start + 10);
+    let returningComments = allComments.slice(start * 10, (start + 1) * 10);
+    // console.log('DATA RANGE:', start * 10, " TO ", (start + 1) * 10);
     res.send(returningComments);
+    // res.send(allComments);
   })
 });
 
