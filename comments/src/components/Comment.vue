@@ -7,7 +7,9 @@
         {{ comment.comment }}
       </div>
       <div class="meta">
-      <div class="time-stamp" :datetime="comment.time_stamp"># days ago</div>
+      <div class="time-stamp" :datetime="comment.time_stamp">
+        <timeago :datetime="comment.time_stamp" :auto-update="60"></timeago>
+        </div>
       <input
         type="button"
         class="reply-button"
