@@ -24,13 +24,13 @@
   },
   "homepage": "https://github.com/sosacloud/comment-service#readme",
   "dependencies": {
-    "@babel/core": "^7.5.4",
-    "@babel/preset-env": "^7.5.4",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "babel-loader": "^8.0.6",
     "concurrently": "^4.1.1",
     "core-js": "^3.1.4",
     "express": "^4.17.1",
-    "express-vue": "^5.9.0",
+    "express-vue": "^5.10.0",
     "faker": "^4.1.0",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
@@ -50,7 +50,7 @@
     "eslint-plugin-vue": "^5.2.3",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.35.3",
+    "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6"
   },
   "eslintConfig": {
