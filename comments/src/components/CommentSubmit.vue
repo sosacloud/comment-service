@@ -1,7 +1,7 @@
 <template>
   <div class="submit">
     <form @submit="submitComment">
-      <input type="text" v-model="comment" name="comment" placeholder="Write a comment" >
+      <input type="text" v-model="comment" class="comment" placeholder="Write a comment" >
     </form>
   </div>
 </template>

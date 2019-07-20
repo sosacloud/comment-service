@@ -1,14 +1,12 @@
 const puppeteer = require('puppeteer');
-import faker from "faker";
 const pageUrl = 'http://localhost:3001/';
+
 let page;
 let browser;
 const width = 1280;
 const height = 720;
 
-const comment = faker.random.words();
-
-beforeAll(async () => {
+let x = async () => {
     browser = await puppeteer.launch({
         headless: false,
         slowMo: 80,
@@ -16,16 +14,23 @@ beforeAll(async () => {
     });
     page = await browser.newPage();
     await page.setViewport({ width, height });
-});
-afterAll(() => {
+};
+let y = () => {
     browser.close();
-});
+};
+let z = async () => {
+    await page.goto(pageUrl, {waitUntil: 'networkidle2'});
+    var selector = 'input.comment';
+    await page.click(selector);
+    await page.type(selector, 'Hello');
+    await page.keyboard.press('Enter');
 
+}
+let master = async () => {
+    await x();
+    await z();
+    
+    // y();
 
-
-
-describe('Post Comment', () => {
-    test('Checking that jest works', () => {
-
-    });
-  });
+};
+master();
