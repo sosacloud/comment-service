@@ -57,8 +57,7 @@ export default {
       // console.log("LOAD MORE", this.loadMore);
       commentList.length < 10 && (this.loadMore = false)
     }). done( () => {
-      // console.log('LATEST ID', this.comments[0].comment_id)
-      this.latestCommentId = this.comments[0].comment_id;
+      // console.log('LATEST ID', this.comments)
       this.page++;
     })
     }
@@ -66,10 +65,11 @@ export default {
   created() {
     this.getComments();
 
-    $.get( "comments/count", {songName: 'This Song'}) // UPDATE SONG NAME HERE
+    $.get( "comments/count", {songName: 'This Song'}) 
     .done(( commentCount ) => {
       // console.log('COMMENT COUNT', commentCount);
       this.commentCount = commentCount['count(*)'];
+      this.latestCommentId = this.commentCount + 1; // Can add another call to get count of all comments in DB for latestCommentId
     });
 
   }
@@ -84,5 +84,7 @@ export default {
   text-align: left;
   color: #949494;
   margin-top: 60px;
+  position: relative;
+  margin-left: 100px;
 }
 </style>

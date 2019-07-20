@@ -2,7 +2,7 @@
   <div class="comment" v-bind:class="{'is_reply':comment.response_id!==comment.comment_id}">
     <div @mouseover="hover = true" @mouseleave="hover = false">
       <img class="profile" :src="comment.profile_pic" /> 
-      <div class="comment-contents">{{ comment.user_name}} at {{ comment.song_time}}
+      <div class="comment-contents">{{ comment.user_name}} at {{ comment.song_time }}
         <br>
         {{ comment.comment }}
       </div>
@@ -48,7 +48,15 @@ export default {
   methods: {
     commentClick() {
       this.clicked = true;
+    },
+    songTimeMethod(num) {
+      let songTime = String(parseInt(num / 60)) + ':' + String(num % 60).padStart(2,0);
+      return songTime;
     }
+  },
+  created() {
+    console.log('CREATED')
+    this.comment.songTime = this.songTimeMethod(this.comment.songTime);
   }
 }
 </script>

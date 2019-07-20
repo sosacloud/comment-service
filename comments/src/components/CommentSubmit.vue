@@ -31,7 +31,7 @@ export default {
         profile_pic: faker.image.avatar(),
         response_id: this.latestCommentId
       }
-      // console.log("LASTEST COMM ID IN SUBMIT", this.atestCommentId);
+      // alert(`profile ${faker.image.avatar()}`);
       this.$emit('submit-comment', newComment);
     }
   }
@@ -40,4 +40,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+div.submit {
+  height: 40px;
+  box-sizing: border-box;
+  padding: 5px 5px 5px 0;
+  background: #f2f2f2;
+  /* border: 1px solid #e5e5e5; */
+  width: 400px;
+  font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  color: #333;  
+}
 </style>

@@ -39,9 +39,10 @@ app.post('/comments/new', (req, res) => {
   let timeStamp = req.body.time_stamp;
   let responseId = req.body.response_id ? req.body.response_id: 0;
   let songTime = Math.floor(Math.random() * 180);
+  let profilePic = req.body.profile_pic;
   // console.log('RESPONSE ID ACTUAL', req.body.response_id);
   // console.log('RESPONSE ID', responseId);
-  db.postNewUser([userName, ''], () => {
+  db.postNewUser([userName, profilePic], () => {
     db.postNewSong([songName], () => {
       db.postNewComment([comment, timeStamp, songTime, userName, songName, responseId], (newComment) => {
         // console.log('NEW COMMENT:', newComment);
