@@ -11,7 +11,7 @@
     "webpack-build": "webpack -d --watch",
     "db": "mysql -u root -p < schema.sql",
     "seed": "node ./database/seeding",
-    "dev": "concurrently \"npm run db\" \"npm run seed\" \"npm run webpack-build\" \"npm run serve\""
+    "start": "concurrently \"npm run db\" \"npm run seed\" \"npm run webpack-build\" \"npm run serve\""
   },
   "repository": {
     "type": "git",

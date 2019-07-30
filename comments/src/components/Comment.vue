@@ -2,7 +2,9 @@
   <div class="comment" v-bind:class="{'is_reply':comment.response_id!==comment.comment_id}">
     <div @mouseover="hover = true" @mouseleave="hover = false">
       <img class="profile" :src="comment.profile_pic" /> 
-      <div class="comment-contents">{{ comment.user_name}} at {{ comment.song_time }}
+      <div class="comment-contents">
+        <div @mouseover="hoverOverlay = true" @mouseleave="hoverOverlay = false">{ comment.user_name}}</div> 
+        at {{ comment.song_time }}
         <br>
         {{ comment.comment }}
       </div>
@@ -42,7 +44,8 @@ export default {
   data() {
     return {
       hover: false,
-      clicked: false
+      clicked: false,
+      hoverOverlay: false
     };
   },
   methods: {
