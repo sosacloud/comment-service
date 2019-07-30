@@ -83,5 +83,6 @@
     "last 2 versions"
   ],
   "description": "## Project setup ``` npm install ```",
-  "main": "babel.config.js"
+  "main": "babel.config.js",
+  "proxy": "http://SosacloudComments-env.ag2mu2yqxe.us-east-1.elasticbeanstalk.com"
 }
