@@ -3,8 +3,7 @@
     <div @mouseover="hover = true" @mouseleave="hover = false">
       <img class="profile" :src="comment.profile_pic" /> 
       <div class="comment-contents">
-        <div @mouseover="hoverOverlay = true" @mouseleave="hoverOverlay = false">{ comment.user_name}}</div> 
-        at {{ comment.song_time }}
+        <div class="user-name" @mouseover="hoverOverlay = true" @mouseleave="hoverOverlay = false">{{comment.user_name}}</div> at {{ comment.song_time }}
         <br>
         {{ comment.comment }}
       </div>
@@ -119,5 +118,9 @@ div.time-stamp {
   /* color: #999; */
   /* margin-left: 10px; */
   /* font-size: 11px; */
+}
+
+div.user-name {
+  display:inline;
 }
 </style>
