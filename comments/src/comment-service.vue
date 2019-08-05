@@ -1,9 +1,9 @@
 <template>
   <div id="comment-service">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <CommentSubmit v-on:submit-comment="addComment" v-bind:latestCommentId="latestCommentId"/>
+    <CommentSubmit v-bind:userPic="userPic" v-on:submit-comment="addComment" v-bind:latestCommentId="latestCommentId"/>
     <CommentCount v-bind:commentCount="commentCount" countMessage="comments" />
-    <Comments v-bind:commentList="comments" v-bind:addComment="addComment"/>
+    <Comments v-bind:userPic="userPic" v-bind:commentList="comments" v-bind:addComment="addComment"/>
     
     <scroll-loader :loader-method="getComments" :loader-enable="loadMore">
       <!-- <img class="loading" src="./assets/giphy.gif" /> -->
@@ -18,6 +18,7 @@ import CommentCount from './components/CommentCount.vue'
 import Comments from './components/Comments.vue'
 import CommentSubmit from './components/CommentSubmit.vue'
 import CommentReply from './components/CommentReply.vue'
+var faker = require('faker');
 
 export default {
   name: 'comment-service',
@@ -33,7 +34,8 @@ export default {
       commentCount: 0,
       latestCommentId: 0,
       page: 0,
-      loadMore: true
+      loadMore: true,
+      userPic: faker.image.avatar()
     }
   },
   methods: {

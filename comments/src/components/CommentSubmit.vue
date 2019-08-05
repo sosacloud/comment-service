@@ -1,5 +1,6 @@
 <template>
   <div class="submit">
+    <img class="user_pic" :src="userPic" /> 
     <form @submit="submitComment">
       <input type="text" v-model="comment" class="comment" placeholder="Write a comment" >
     </form>
@@ -16,7 +17,8 @@ export default {
     return {comment: ''}
   },
   props: {
-    latestCommentId: Number
+    latestCommentId: Number,
+    userPic: String
   },
   methods: {
     submitComment() {
@@ -47,7 +49,28 @@ div.submit {
   background: #f2f2f2;
   /* border: 1px solid #e5e5e5; */
   width: 400px;
-  font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
-  color: #333;  
+  font: 14px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  color: #333;     
+}
+img.user_pic {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left: -6px;
+    top: -6px;
+    float: left;
+}
+input.comment {
+  border-radius: 4px;
+  height: 27px;
+  font-size: 14px;  
+  box-sizing: border-box;
+  width: 352px;
+  background: #fff;
+  padding: 0 9px;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
 }
 </style>

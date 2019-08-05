@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="count">
     <div>{{commentCount}} {{ countMessage }}</div>
   </div>
 </template>
@@ -29,5 +29,11 @@ li {
 }
 a {
   color: #42b983;
+}
+div.count {
+  font-weight: 100;
+  color: #999;
+  border-bottom: 1px solid #f2f2f2;
+  font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 </style>

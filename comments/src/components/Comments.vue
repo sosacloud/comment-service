@@ -1,7 +1,7 @@
 <template>
   <div class="comments">
     <div class="comment-div" v-bind:key="comment.comment_id" v-for="comment in commentList">
-      <comment v-bind:comment="comment" v-bind:addComment="addComment"/>
+      <comment v-bind:userPic="userPic" v-bind:comment="comment" v-bind:addComment="addComment"/>
       <br>
     </div>
   </div>
@@ -17,7 +17,8 @@ export default {
   },
   props: {
     commentList: Array,
-    addComment: Function
+    addComment: Function,
+    userPic: String
   },
 }
 </script>

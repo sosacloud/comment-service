@@ -1,15 +1,22 @@
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
+  // host     : process.env.RDS_HOSTNAME,
+  // user     : process.env.RDS_USERNAME,
+  // // password : process.env.RDS_PASSWORD,
+  // port     : process.env.RDS_PORT,
+  // database: "SoSaCloud"
   host:'localhost',
   user: 'root',
   password: 'pass',
   database: 'SoSaCloud'
 });
+//sudo yum install mysql-server mysql-client , then
+//sudo service mysqld start;
 
 connection.connect((err) => {
   if (err) {
-    console.error('error connecting: ' + err.stack);
+    console.error('Database connection failed: ' + err.stack);
     return;
   }
 })

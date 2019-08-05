@@ -1,5 +1,6 @@
 <template>
   <div class="reply">
+    <img class="user_pic" :src="userPic" /> 
     <form @submit="submitComment">
       <input class="reply" type="text" v-model="comment" name="reply" placeholder="Write a reply" >
     </form>
@@ -16,7 +17,8 @@ export default {
     return {comment: ''}
   },
   props: {
-    parentComment: Object
+    parentComment: Object,
+    userPic: String
   },
   methods: {
     submitComment() {
@@ -49,9 +51,23 @@ div.reply {
   padding: 5px;
   background: #f2f2f2;
   border: 1px solid #e5e5e5;
-  width: 385px;
+  width: 355px;
 }
 input.reply {
-  width: 375px;
+  width: 315px;
+  background: #fff;
+  padding: 0 9px;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
+  height: 20px;
+}
+img.user_pic {
+    margin-right: 0;
+    position: relative;
+    float: left;
+    width: 20px;
+    height: 20px;
 }
 </style>

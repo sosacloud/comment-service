@@ -3,9 +3,9 @@
     <div @mouseover="hover = true" @mouseleave="hover = false">
       <img class="profile" :src="comment.profile_pic" /> 
       <div class="comment-contents">
-        <div class="user-name" @mouseover="hoverOverlay = true" @mouseleave="hoverOverlay = false">{{comment.user_name}}</div> at {{ comment.song_time }}
+        <div class="user-name" @mouseover="hoverOverlay = true" @mouseleave="hoverOverlay = false">{{comment.user_name}}</div> <a class="at">at</a> {{ comment.song_time }}
         <br>
-        {{ comment.comment }}
+        <div class="comment-text">{{ comment.comment }} {{comment.response_id}} {{comment.comment_id}}</div>
       </div>
       <div class="meta">
       <div class="time-stamp" :datetime="comment.time_stamp">
@@ -17,14 +17,14 @@
         v-show="hover"
         v-bind:addComment="addComment"
         v-on:click="commentClick"
-        value="< Reply"
+        value="Reply"
       >
       </div>
       <br>
       <br>
       <!-- Need to link reply icon image to CSS -->
     </div>
-    <CommentReply v-bind:parentComment="comment" v-on:submit-reply="addComment" v-show="clicked"/>
+    <CommentReply v-bind:userPic="userPic" v-bind:parentComment="comment" v-on:submit-reply="addComment" v-show="clicked"/>
   </div>
 </template>
 
@@ -38,7 +38,8 @@ export default {
   },
   props: {
     comment: Object,
-    addComment: Function
+    addComment: Function,
+    userPic: String
   },
   data() {
     return {
@@ -78,6 +79,11 @@ div.meta {
   justify-content: space-between;
   align-items: flex-end;
 }
+div.comment-text {
+  color:black;
+  word-wrap: break-word;
+  width: 350px;
+}
 input.reply-button {
   position: absolute;
   /* left: 360px; */
@@ -112,15 +118,17 @@ div.comment-contents {
   /* width: 400px; */
 }
 div.time-stamp {
-  /* float: left; */
   position: relative;
   text-align: right;
-  /* color: #999; */
-  /* margin-left: 10px; */
-  /* font-size: 11px; */
+  cursor: pointer;
 }
 
 div.user-name {
   display:inline;
+  cursor: pointer;
+}
+a.at {
+  color:#BBBBBB;
+  font-size:11px;
 }
 </style>
