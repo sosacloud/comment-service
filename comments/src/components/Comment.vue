@@ -5,7 +5,7 @@
       <div class="comment-contents">
         <div class="user-name" @mouseover="hoverOverlay = true" @mouseleave="hoverOverlay = false">{{comment.user_name}}</div> <a class="at">at</a> {{ comment.song_time }}
         <br>
-        <div class="comment-text">{{ comment.comment }} {{comment.response_id}} {{comment.comment_id}}</div>
+        <div class="comment-text">{{ comment.comment }}</div>
       </div>
       <div class="meta">
       <div class="time-stamp" :datetime="comment.time_stamp">
