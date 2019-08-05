@@ -15,9 +15,9 @@ let randomElement = (array) => {
 var randomMessage = function(){
   var opening = ['Im glad ', 'This makes me happy ', 'wut ', 'Im sad ', '', '', '', 'Check out my song ', 'Yo ', 'YOOOOOO ', 'What did I just listen to? ', "Hi im a 15 year old rapper. Please check out my song named: "];
   var verbs = ['', 'dab ', 'lel ',];
-  var objects = ['my ', 'your ', 'the ', 'a ', 'my ', 'an entire ', 'this ', 'that ', 'the '];
+  var objects = ['my ', 'your ', 'the ', 'a ', 'my ', 'an entire ', 'this ', 'that ', 'the ', 'shoutouts to'];
   var nouns = ['music ', 'song ', 'jam ', 'sandwich ', 'life ', 'wack '];
-  var emoji = ['', '', '', ':) ', ':) :) :) ', ':( ', '', '', ':D ', 'D: ', 'H'];
+  var emoji = ['', '', '', ':) ', ':) :) :) ', ':( ', '', '', ':D ', 'D: ', '', 'UwU'];
   return [randomElement(opening), randomElement(verbs), randomElement(objects), randomElement(nouns), randomElement(emoji)];
 };
 

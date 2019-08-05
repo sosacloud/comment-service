@@ -3,7 +3,7 @@
     <div @mouseover="hover = true" @mouseleave="hover = false">
       <img class="profile" :src="comment.profile_pic" /> 
       <div class="comment-contents">
-        <div class="user-name" @mouseover="hoverOverlay = true" @mouseleave="hoverOverlay = false">{{comment.user_name}}</div> <a class="at">at</a> {{ comment.song_time }}
+        <div class="user-name" @mouseover="hoverOverlay = true" @mouseleave="hoverOverlay = false">{{comment.user_name}}</div> <a class="at">at</a> {{ this.song_time }}
         <br>
         <div class="comment-text">{{ comment.comment }}</div>
       </div>
@@ -45,7 +45,7 @@ export default {
     return {
       hover: false,
       clicked: false,
-      hoverOverlay: false
+      hoverOverlay: false,
     };
   },
   methods: {
@@ -54,12 +54,12 @@ export default {
     },
     songTimeMethod(num) {
       let songTime = String(parseInt(num / 60)) + ':' + String(num % 60).padStart(2,0);
+      console.log('INSIDE', String(parseInt(num / 60)) + ':' + String(num % 60).padStart(2,0))
       return songTime;
     }
   },
   created() {
-    console.log('CREATED')
-    this.comment.songTime = this.songTimeMethod(this.comment.songTime);
+    this.song_time = this.songTimeMethod(this.comment.song_time);
   }
 }
 </script>
