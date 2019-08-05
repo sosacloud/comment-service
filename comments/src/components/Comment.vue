@@ -54,7 +54,6 @@ export default {
     },
     songTimeMethod(num) {
       let songTime = String(parseInt(num / 60)) + ':' + String(num % 60).padStart(2,0);
-      console.log('INSIDE', String(parseInt(num / 60)) + ':' + String(num % 60).padStart(2,0))
       return songTime;
     }
   },
