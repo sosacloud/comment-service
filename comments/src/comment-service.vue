@@ -87,6 +87,6 @@ export default {
   color: #949494;
   margin-top: 60px;
   position: relative;
-  margin-left: 100px;
+  margin-left: 200px;
 }
 </style>
