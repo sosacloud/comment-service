@@ -23,14 +23,13 @@ export default {
   methods: {
     submitComment() {
       const newComment= {
-        comment_id: 1, //need to pass a prop with current comment ID num
         // user_id: 1,
         song_id: 1, //will be this.songID or something
         time_stamp: moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'),
         comment: this.comment,
         user_name: faker.internet.userName(),
         profile_pic: faker.image.avatar(),
-        response_id: this.parentComment.comment_id //pass prop with
+        response_id: this.parentComment.response_id //pass prop with
       }
       this.$emit('submit-reply', newComment);
     }
