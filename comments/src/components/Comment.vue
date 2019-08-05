@@ -107,6 +107,7 @@ img.profile {
   opacity: 1;
   border-radius: 50%;
   float: left;
+  cursor:pointer;
 }
 div.comment-contents {
   float: left;
