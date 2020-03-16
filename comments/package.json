@@ -27,7 +27,7 @@
   "dependencies": {
     "@babel/core": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
-    "acorn": "^6.2.1",
+    "acorn": "^6.4.1",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "concurrently": "^4.1.1",
