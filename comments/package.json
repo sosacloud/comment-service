@@ -34,7 +34,7 @@
     "core-js": "^2.6.5",
     "express": "^4.17.1",
     "express-vue": "^5.9.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "mysql": "^2.17.1",
     "nodemon": "^1.19.1",
